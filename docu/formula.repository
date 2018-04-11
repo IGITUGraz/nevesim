@@ -1,0 +1,13 @@
+\form#0:$(a_1,...,a_N)$
+\form#1:$(d_1,...,d_N)$
+\form#2:$t_1 = 0$
+\form#3:$a_1$
+\form#4:$t_n = d_1 + d_2 + ... + d_{n-1}$
+\form#5:$a_n$
+\form#6:$t_{n}$
+\form#7:$t_{n+1}$
+\form#8:$t_{N}$
+\form#9:$t_{N+1}$
+\form#10:$a_{N}$
+\form#11:$exp(u(t))$
+\form#12:$u(t)$

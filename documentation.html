@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>NEVESIM: Neural EVEnt-based SIMulator</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="nevesim.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<!-- comment  -->
+<!-- Main&nbsp;Page  -->
+
+<!-- header  -->
+<div id="header">  
+    <div id="logo">  
+        <a href="index.html" title="Home">
+            <img src="imgs/elements/logo.png" alt="Home" />
+        </a>  
+    </div>
+</div>
+
+
+<!--
+-->
+
+<!-- menu  -->
+<div class="menu" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Home</span></a></li>
+      <li><a href="news.html"><span>News</span></a></li>
+      <li><a href="download.html"><span>Download</span></a></li>
+      <li class="current"><a href="documentation.html"><span>Documentation</span></a></li>
+      <li><a href="demo.html"><span>Demo</span></a></li>
+      <li><a href="faq.html"><span>FAQ</span></a></li>
+      <li><a href="contactus.html"><span>Contact&nbsp;us</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="menuselection">
+    <div class="menuselectiontitle">
+        <h1>Learn about NEVESIM!</h1>  
+    </div>
+</div>
+
+
+<div class="content">
+
+ <div class="sectiontitle">
+        <ul class="tablist2">
+            <li class="current">
+                <h1>System requirements</h1>
+	    </li>
+	</ul>
+    </div>
+
+    <div class="section">
+
+	<ul>
+        	<li>
+		<a class="el" href="download.html">NEVESIM</a> can be installed from sources under Linux and under Windows by using the 
+		MingGW-w64 toolset.
+        	</li><br>
+
+        	<li> Library dependecies(Linux):<br>
+		Linux Kernel: 3.8.0-19-generic<br>
+		gcc: (Ubuntu/Linaro 4.7.3-1ubuntu1) 4.7.3<br>
+		Python: 2.7.4<br>
+		python-numpy: 1.7.1<br>
+		cmake: 2.8.10.1<br>
+		SWIG: 2.0.8<br>
+		libcppunit-dev: 1.12.1<br>
+		libboost-all-dev: 1.49.0.1<br>
+		build-essential: 11.6<br>
+		python-matplotlib: 1.2.1<br>
+	        </li><br>
+
+        	<li>
+		Installation instructions and library dependecies for <a class="el" href="download.html">NEVESIM</a> under Windows will be provided 
+		soon.
+	        </li>
+	    </ul>
+     </div>
+
+
+    <div class="sectiontitle">
+        <ul class="tablist2">
+            <li class="current">
+                <h1>Fast installation</h1>
+	    </li>
+	</ul>
+    </div>
+
+    <div class="section">
+
+	    <ul>
+        	<li>
+		Under assumption you have all required libraries installed and all paths properly set, the installation of <a class="el" 
+		href="download.html">NEVESIM</a> is simple as:
+<pre>
+cd &ltinstall_location&gt/_build
+cmake -DCMAKE_INSTALL_PREFIX=&ltinstall_location&gt ..
+make install 
+</pre>
+	        </li>
+	    </ul>
+
+     </div>
+
+    <div class="sectiontitle">
+        <ul class="tablist2">
+            <li class="current">
+                <h1>Detailed installation instruction</h1>
+	    </li>
+	</ul>
+    </div>
+
+    <div class="section">
+
+	    <ul>
+        	<li>
+		In order to properly install <a class="el" href="download.html">NEVESIM</a> on your machine you need to:<br>
+		    <ul>
+        		<li>install all required libraries</li>
+			<li>create installation folder and checkout the latest source code</li>
+			<li>set up paths</li>
+			<li>compile it</li>
+		    </ul>
+		</li><br>
+
+        	<li>Installation of required libraries:
+<pre>
+sudo apt-get install python-dev
+sudo apt-get install python-numpy
+sudo apt-get install python-matplotlib
+sudo apt-get install ipython
+sudo apt-get install swig
+sudo apt-get install cmake
+sudo apt-get install build-essential
+sudo apt-get install libboost-all-dev
+sudo apt-get install libcppunit-dev 
+</pre>
+		</li>
+
+		<li>Create installation directory and checking out the lastest source code:
+<pre>
+mkdir &ltinstall_location&gt
+cd &ltinstall_location&gt/
+svn checkout svn://svn.code.sf.net/p/neuroeve/code/trunk 
+</pre>
+		</li>
+
+		<li>Setting the paths:
+<pre>
+export NEVESIM_HOME=&ltinstall_location&gt
+export PATH=${NEVESIM_HOME}/bin:${PATH}
+export LD_LIBRARY_PATH=${NEVESIM_HOME}/lib:${LD_LIBRARY_PATH}
+export PYTHONPATH=${NEVESIM_HOME}/lib/python2.7/site-packages:${PYTHONPATH}
+</pre>
+		</li>
+
+		<li>Compiling the source code:
+<pre>
+mkdir _build
+cd _build/
+cmake -DCMAKE_INSTALL_PREFIX=&ltinstall_location&gt ..
+make install 
+</pre>
+		And now you are ready to <a class="el" href="download.html">NEVESIM</a>!<br>
+		For more detailed installation instructions we refer to INSTALL file within the source code.
+		</li>
+	    </ul>
+	
+     </div>
+
+   
+
+    <div class="sectiontitle">
+        <ul class="tablist2">
+            <li class="current">
+                <h1>Examples</h1>
+	    </li>
+	</ul>
+    </div>
+
+    <div class="section">
+
+	    <ul>
+        	<li>
+			After installation you can try out examples available in &ltinstallation directory&gt/unittests/.<br>
+			You can also download and run <a class="el" href="demo.html">demos</a>!
+	        </li>
+	    </ul>
+
+     </div>
+
+    <div class="sectiontitle">
+        <ul class="tablist2">
+            <li class="current">
+                <h1>Class reference</h1>
+	    </li>
+	</ul>
+    </div>
+
+    <div class="section">
+
+	    <ul>
+        	<li>
+			Documentation and <a class="el" href="download.html">NEVESIM</a> class reference can be found <a rel="nofollow" 
+			class="external text" href="http://sim.igi.tugraz.at/nevesim/docu/index.html">here</a>.		
+	        </li>
+	    </ul>
+
+     </div>
+
+<!--
+  <div class="sectiontitle">
+        <ul class="tablist2">
+            <li class="current">
+                <h1>User manual</h1>
+	    </li>
+	</ul>
+    </div>
+
+    <div class="section">
+
+	    <ul>
+        	<li>
+			In preparation!
+	        </li>
+	    </ul>
+
+     </div>
+
+</div>
+-->
+
+ <div class="sectiontitle">
+        <ul class="tablist2">
+            <li class="current">
+                <h1>Common mistakes and bugs</h1>
+	    </li>
+	</ul>
+    </div>
+
+    <div class="section">
+
+	    <ul>
+        	<li>
+		If you discovered a bug please inform us and help us improve <a class="el" href="download.html">NEVESIM</a>!<br>
+		Nevertheless, before reporting the bug please check twice everything, specially typical mistakes that can occure such as memory 
+		allocation etc.
+	        </li><br>
+
+        	<li>Segmentation fault error:<br>
+		This type of error can occure if one tries, during the program execution, to access the object which is released. In <a 
+		class="el" href="download.html">NEVESIM</a> this could happen if one creates an object within a function (or a class) and passes its 
+		reference to network object which is managed outside the function(or class). This will obviously cause segmentation fault as the 
+		allocated memory for the object will be released once the function (or a class) ends.
+	        </li>
+	    </ul>
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+<hr class="footer"/>
+    <address class="footer"><small>Copyright @ 2013 NEVESIM - All rights Reserved. Powered by Zeno.</small></address>
+
+</body>
+</html>
