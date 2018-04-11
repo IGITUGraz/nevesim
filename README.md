@@ -6,6 +6,14 @@ Neural EVEnt-based SIMulator
 * Additional information including the documentation of the NEVESIM classes can be found here: https://github.com/IGITUGraz/nevesim.
 * On the [wiki](https://github.com/IGITUGraz/nevesim/wiki) we provide some examples that demonstrate the principle usage of NEVESIM through its Python interface.
 
+## Please cite
+
+NEVESIM is free to use. If you use it for your own publications, please cite our paper:
+
+https://doi.org/10.3389/fninf.2014.00070
+
+There, you also find valuable information on how NEVESIM can be used and how it was implemented.
+
 ## License
 
 *NEVESIM*, Copyright (C) 2014, the *NEVESIM* team (see AUTHORS).
