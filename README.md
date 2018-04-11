@@ -8,7 +8,7 @@ Neural EVEnt-based SIMulator
 
 ## License
 
-*NEVESIM*, Copyright (C) 2018, the *NEVESIM* team (see AUTHORS).
+*NEVESIM*, Copyright (C) 2014, the *NEVESIM* team (see AUTHORS).
 
 *NEVESIM* is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
