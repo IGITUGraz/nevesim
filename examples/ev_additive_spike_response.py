@@ -6,7 +6,7 @@
 # its membrane potential with a sine wave. The
 # resulting spike train is plotted.
 #
-# http://sim.igi.tugraz.at/
+# https://igitugraz.github.io/nevesim/
 #
 #
 
