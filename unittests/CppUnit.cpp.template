@@ -1,0 +1,26 @@
+
+#include "MyClassTest.h"
+#include <cmath>
+
+#include <iostream>
+using std::cerr;
+using std::endl;
+
+// choose one from the following
+// SIM_LOCAL_AUTOBUILD_TEST_SUITE( MyClassTest )
+// SIM_LOCAL_NIGHTLY_TEST_SUITE( MyClassTest )
+
+void MyClassTest::setUp()
+{
+}
+
+void MyClassTest::tearDown()
+{
+}
+
+void MyClassTest::test_method()
+{
+	//CPPUNIT_ASSERT_DOUBLES_EQUAL( expected, actual, delta );
+	//CPPUNIT_ASSERT_EQUAL( expected, actual );
+	//CPPUNIT_ASSERT( expected == actual );
+}

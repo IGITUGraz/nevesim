@@ -1,0 +1,104 @@
+=============================
+   How to install NEVESIM ?
+=============================
+
+NEVESIM can be installed from sources under Linux and under Windows by using the MingGW-w64 toolset.
+Here we provide instructions how to install it on Linux. Installations instructions for Windows will be prepared soon. 
+
+
+=================================================
+   Installing the NEVESIM dependencies on Linux
+=================================================
+
+
+NEVESIM depends on the following linux packages, with the specified (or perhaps also newer, but not tested) versions:   
+
+Linux Kernel: 3.8.0-19-generic
+gcc: (Ubuntu/Linaro 4.7.3-1ubuntu1) 4.7.3
+Python: 2.7.4
+python-numpy: 1.7.1
+cmake: 2.8.10.1
+SWIG: 2.0.8
+libcppunit-dev: 1.12.1
+libboost-all-dev: 1.49.0.1
+build-essential: 11.6
+python-matplotlib: 1.2.1
+
+The names of the linux packages are taken from repository in the Linux Mint distribution, where 
+nevesim was successfully installed. 
+
+Please note compilation of NEVESIM with newer (or older) versions of these packages has not been tested, 
+so some incompatibilities could arise if you decide to check other versions.
+
+To install these packages you should execute the following commands:
+
+sudo apt-get install python-dev
+
+sudo apt-get install python-numpy
+
+# the following 2 pkgs are needed only for running the examples
+sudo apt-get install python-matplotlib
+sudo apt-get install ipython
+
+sudo apt-get install swig
+
+sudo apt-get install cmake
+
+sudo apt-get install build-essential
+
+sudo apt-get install libboost-all-dev
+
+sudo apt-get install libcppunit-dev
+
+
+===========================================
+ Compiling and Installing NEVESIM
+===========================================
+
+NEVESIM uses the cmake tool for compiling. 
+CMake requires that one creates a separate directory, apart from the project directory, where the building takes place:
+ 
+mkdir _build
+cd _build/
+
+If you want to install NEVESIM at a default location, then you should just execute:
+
+cmake ..
+
+If you want to install it at a specific custom location <install_location>, then execute:
+
+cmake -DCMAKE_INSTALL_PREFIX=<install_location> ..
+
+This prepares the Make files for compiling NEVESIM. To compile the sources run:
+
+make all
+
+If you want to run the tests, then after the compilation execute:
+
+make check
+
+For generating the doxygen documentation the command is:
+
+make doc
+
+The actual installation of the compiled libraries is done with:
+
+make install
+
+NOTE: If you install to a default location, cmake might put the NEVESIM Python packages in the directory
+      "usr/local/lib/python2.7/site-packages", whereas in your Linux distribution (e.g. Ubuntu, Debian) the default directory 
+      for Python packages might be "usr/lib/python2.7/dist-packages" or another. Therefore, in this case make sure
+      that you set the environment variable PYTHONPATH to this location so that Python can find the NEVESIM python package: 
+      export PYTHONPATH=/usr/local/lib/python2.7/site-packages:${PYTHONPATH}
+
+
+If you installed NEVESIM at a custom location then you should setup the environment to have access to the NEVESIM 
+binary libraries and Python packages:
+
+
+export NEVESIM_HOME=<install_location>
+export PATH=${NEVESIM_HOME}/bin:${PATH}
+export LD_LIBRARY_PATH=${NEVESIM_HOME}/lib:${LD_LIBRARY_PATH}
+export PYTHONPATH=${NEVESIM_HOME}/lib/python2.7/site-packages:${PYTHONPATH}
+
+Now you are ready to go! 
